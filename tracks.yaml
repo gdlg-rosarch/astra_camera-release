@@ -45,5 +45,5 @@ tracks:
     release_tag: :{version}
     ros_distro: kinetic
     vcs_type: git
-    vcs_uri: https://github.com/tfoote/ros_astra_camera.git
+    vcs_uri: https://github.com/orbbec/ros_astra_camera.git
     version: :{auto}
