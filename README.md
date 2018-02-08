@@ -1,3 +1,26 @@
+## astra_camera (indigo) - 0.2.0-0
+
+The packages in the `astra_camera` repository were released into the `indigo` distro by running `/usr/bin/bloom-release --rosdistro indigo --track indigo astra_camera --edit` on `Thu, 08 Feb 2018 09:39:18 -0000`
+
+The `astra_camera` package was released.
+
+Version of package(s) in repository `astra_camera`:
+
+- upstream repository: https://github.com/orbbec/ros_astra_camera.git
+- release repository: https://github.com/ros-drivers-gbp/astra_camera-release.git
+- rosdistro version: `0.1.5-0`
+- old version: `0.1.5-0`
+- new version: `0.2.0-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.26`
+- catkin_pkg version: `0.2.10`
+- rosdep version: `0.11.8`
+- rosdistro version: `0.5.0`
+- vcstools version: `0.1.40`
+
+
 ## astra_camera (indigo) - 0.1.5-0
 
 The packages in the `astra_camera` repository were released into the `indigo` distro by running `/usr/bin/bloom-release -t indigo -r indigo astra_camera --new-track` on `Wed, 01 Jun 2016 00:06:20 -0000`
