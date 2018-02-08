@@ -5,17 +5,25 @@ find_package(catkin REQUIRED camera_info_manager dynamic_reconfigure image_trans
 
 find_package(Boost REQUIRED COMPONENTS system thread)
 
+option(FILTER "OB Filter library" ON)
+
+if( ${FILTER} STREQUAL "ON" )
+set(obfilter "On")
+else()
+set(obfilter "Off")
+endif()
+
 include(ExternalProject)
 
 ExternalProject_Add(astra_openni2
   PREFIX astra_openni2
   # SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/astra_openni2/OpenNI2
-  GIT_REPOSITORY https://github.com/tfoote/OpenNI2.git
+  GIT_REPOSITORY https://github.com/orbbec/OpenNI2.git
   GIT_TAG orbbec_ros
   CONFIGURE_COMMAND echo "no need to configure"
   #${CMAKE_CURRENT_SOURCE_DIR}/libantlr/configure --prefix=<INSTALL_DIR>
   BUILD_IN_SOURCE 1
-  BUILD_COMMAND make release
+  BUILD_COMMAND make release FILTER=${obfilter}
   INSTALL_DIR openni2
   INSTALL_COMMAND tar -xjf <SOURCE_DIR>/Packaging/Final/OpenNI-Linux-2.3.tar.bz2 -C <INSTALL_DIR> --strip 1 && mkdir -p <INSTALL_DIR>/include && ln -fs <INSTALL_DIR>/Include <INSTALL_DIR>/include/openni2
 )
@@ -32,13 +40,12 @@ catkin_package(
   DEPENDS libastra
 )
 
-link_directories(${CMAKE_BINARY_DIR}/openni2/Redist)
+link_directories(${CMAKE_CURRENT_BINARY_DIR}/openni2/Redist)
 
 include_directories(include
                     ${catkin_INCLUDE_DIRS}
                     ${Boost_INCLUDE_DIRS}
-                    ${CMAKE_CURRENT_SOURCE_DIR}/include/openni2
-                    ${CMAKE_BINARY_DIR}/openni2/include
+                    ${CMAKE_CURRENT_BINARY_DIR}/openni2/include
                     )
 
 
@@ -92,11 +99,11 @@ install(TARGETS astra_wrapper astra_camera_nodelet astra_camera_node astra_list_
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
   )
 
-install(FILES ${CMAKE_BINARY_DIR}/openni2/Redist/libOpenNI2Orbbec.so
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/openni2/Redist/libOpenNI2Orbbec.so
   DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}/
 )
 
-install(DIRECTORY ${CMAKE_BINARY_DIR}/openni2/Redist/OpenNI2
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/openni2/Redist/OpenNI2
   DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}/
 )
 
