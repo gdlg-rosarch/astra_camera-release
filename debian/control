@@ -1,0 +1,12 @@
+Source: ros-kinetic-astra-camera
+Section: misc
+Priority: extra
+Maintainer: Tim Liu <liuhua@orbbec.com>
+Build-Depends: debhelper (>= 9.0.0), git-core, libudev-dev, libusb-1.0-0-dev, ros-kinetic-camera-info-manager, ros-kinetic-catkin, ros-kinetic-dynamic-reconfigure, ros-kinetic-image-transport, ros-kinetic-message-generation, ros-kinetic-nodelet, ros-kinetic-roscpp, ros-kinetic-sensor-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-astra-camera
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-camera-info-manager, ros-kinetic-dynamic-reconfigure, ros-kinetic-image-transport, ros-kinetic-message-runtime, ros-kinetic-nodelet, ros-kinetic-roscpp, ros-kinetic-sensor-msgs
+Description: Drivers for Orbbec Astra Devices.
