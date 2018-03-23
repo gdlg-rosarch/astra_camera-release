@@ -1,3 +1,26 @@
+## astra_camera (kinetic) - 0.2.2-0
+
+The packages in the `astra_camera` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release astra_camera --track kinetic --rosdistro kinetic` on `Fri, 23 Mar 2018 10:44:24 -0000`
+
+The `astra_camera` package was released.
+
+Version of package(s) in repository `astra_camera`:
+
+- upstream repository: https://github.com/orbbec/ros_astra_camera.git
+- release repository: https://github.com/ros-drivers-gbp/astra_camera-release.git
+- rosdistro version: `0.2.1-0`
+- old version: `0.2.1-0`
+- new version: `0.2.2-0`
+
+Versions of tools used:
+
+- bloom version: `0.6.2`
+- catkin_pkg version: `0.4.1`
+- rosdep version: `0.12.1`
+- rosdistro version: `0.6.8`
+- vcstools version: `0.1.40`
+
+
 ## astra_camera (indigo) - 0.2.1-0
 
 The packages in the `astra_camera` repository were released into the `indigo` distro by running `/usr/bin/bloom-release astra_camera --track indigo --rosdistro indigo` on `Mon, 12 Feb 2018 15:23:55 -0000`
